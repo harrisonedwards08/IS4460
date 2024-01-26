@@ -1,12 +1,58 @@
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<head><style>
+    body { background : rgb(212, 225, 226);}
     
-    <h1> update, bitch</h1>
+    
+    </style></head>
 
 
+<title>Update or Delete Movie</title>
 
-</html>
+<div class="jumbotron text-center">
+    <h1> Update or Delete Movie </h1> 
+</div>
+
+<div id="about" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"></div>
+  
+      <div class="col-sm-5">
+        <h3>Update Movie Information</h3>
+        <form method='post' action='movie_list.html'>
+          Movie Name: <br>
+          <input type="text" name="Movie Name"> <br>
+  
+          Trailer Embed Link: <br>
+          <input type="text" name="Trailer Embed Link"><br>
+  
+          Image Classpath: <br>
+          <input type="text" name="Image Classpath"><br>
+  
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+        <br>
+      </div>
+  
+      <div class="col-sm-5">
+        <h3>Delete Movie</h3>
+        <form method='post' action='movie_list.html'>
+          Movie Name: <br>
+          <input type="text" name="Movie Name"> <br>
+  
+          <br>
+          <input type="submit" value="Delete">
+        </form>
+        <br>
+      </div>
+  
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
