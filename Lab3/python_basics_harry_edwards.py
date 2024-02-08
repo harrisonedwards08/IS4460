@@ -9,6 +9,12 @@ print(Blah)
 blah+= Blah
 print(blah)
 
+maybestring = "34"
+
+nolongerstring = int(maybestring)
+
+print(nolongerstring)
+
 print(type(blah))
 
 aye = 5
@@ -22,19 +28,17 @@ print(this + this2 + this3 + "prepare to die")
 
 
 print(5==6)
+print (int(5==5))
 
 
 def subtract_numbers (a,b):
   output = a-b
   return output
 
-
 c = 10
 d = 15
 
 print(subtract_numbers(c,d))
-
-
 
 print(subtract_numbers(a=7,b=3))
 

@@ -2,29 +2,43 @@
 <body>
   <P>{{ hi }}</P>  
 
+<p>original name was {{oldname}} title name is {{new_name}}</p>
 
 
 
-    {{name}}
+
+<h3> old list of names: </h3>
+  <p>
 
 
-    <h3>  
-        {% for name in names_list %}
+      {% for name in old_names%}
 
-        {{name}}
-        {%endfor%}
-    </h3>
+     <li> {{name}}</li>
+
+      {%endfor%}
+<br>
+      the 2nd name is {{old_names.1}}
+
+      <br>
+  <p\>
     
+  <h3>new list of names: </h3>
+
+  {%for name in new_names%}
+  <li>{{name}}</li>
+  {%endfor%}
   
 
-<p>   {{names_list.1}}</p>    
- 
 
 
-car info:
 
 
-<h2> color of car1 is {{car1.color}} </h2>
-<p>car1 type is {{car1.type}}</p>
+<h3>car info:</h3>
+
+
+<p>color of car1 is {{car1.color}}, car2 {{car2.color}}. bike is {{bike1.color}}</p>
+
+<p>car1 goes {{car1.sound}}, car2 goes {{car2.sound}}, the bike goes {{bike1.sound}}</p>
+
 </body>
 </html>

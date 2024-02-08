@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from . import my_functions, my_objects
 
 def title_name(string1: str):
-    return string1.lower()
+    return string1.title()
 
 
 
@@ -20,8 +20,9 @@ class HomePageView(View):
 
         new_names = my_functions.title_names(names_list)
 
-        car1 = my_objects.Car("purple", "VROOM")
-        car2 = my_objects.Car("orange", "crash")
+        car1 = my_objects.Car("purple", "Vroom")
+        car2 = my_objects.Car("orange", "Crash")
+        bike1 = my_objects.motorcycle("black","BRAAP BRAAP")
 
 
 
@@ -29,10 +30,13 @@ class HomePageView(View):
 
 
         my_context = {'hi':'hello world!',
-                      'name':new_name,
+                      'oldname': my_name,
+                      'new_name':new_name,
+                      'old_names': names_list,
                       'new_names':new_names,
                       'car1': car1,
-                      'car2': car2
+                      'car2': car2,
+                      'bike1': bike1
 
 
 
