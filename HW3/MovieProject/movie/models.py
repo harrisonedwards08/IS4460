@@ -4,10 +4,10 @@ class Movie(models.Model):
     title = models.CharField(max_length = 100,default = "")
     description = models.CharField(max_length = 500)
     director = models.CharField(max_length = 100)
-    release_year = models.IntegerField(max_length = 50)
-    budget = release_year = models.IntegerField(max_length = 50)
-    runtime = models.IntegerField(max_length = 50)
-    rating = models.CharField(max_lenth = 50)
+    release_year = models.CharField(max_length = 50)
+    budget = models.CharField(max_length = 50)
+    runtime = models.CharField(max_length = 50)
+    rating = models.CharField(max_length = 50)
 
 class User(models.Model):
     username = models.CharField(max_length = 50,default = "")
