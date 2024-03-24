@@ -33,12 +33,42 @@ class MovieEdit(View):
         form = MovieForm(request.POST,instance=movie)
 
         if form.is_valid():
+            image = request.FILES['image']
+            instance = movie.image = image
+            
             movie = form.save()
         
         return render(request = request,
                       template_name = 'movie/movie_edit.html',
                       context = {'movie':movie,'form':form})
     
+
+class MovieAdd(View):
+
+    def get(self, request):
+        form = MovieForm()
+        return render(request=request, template_name='movie/movie_add.html', context={'form': form})
+
+    def post(self, request):
+        form = MovieForm(request.POST)
+        if form.is_valid():
+            image = request.FILES['image']
+            form.save()
+            return redirect('movie-list')  # Redirect to movie list page after adding
+        return render(request=request, template_name='movie/movie_add.html', context={'form': form})
+
+
+
+
+
+class MovieDetails(View):
+    def get(self, request, movie_id):
+        movie = Movie.objects.get(pk=movie_id)
+        fields = movie._meta.get_fields()  # Get all fields of the Movie model
+
+        return render(request=request, template_name='movie/movie_details.html', context={'movie': movie, 'fields': fields})
+
+
 
 
 

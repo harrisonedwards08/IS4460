@@ -8,6 +8,7 @@ class Movie(models.Model):
     budget = models.CharField(max_length = 50)
     runtime = models.CharField(max_length = 50)
     rating = models.CharField(max_length = 50)
+    image = models.ImageField (upload_to='images/', null=True)
 
 class User(models.Model):
     username = models.CharField(max_length = 50,default = "")

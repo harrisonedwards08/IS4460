@@ -5,6 +5,9 @@ class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
         fields = '__all__'
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
 
 
 class UserForm(forms.ModelForm):
