@@ -30,7 +30,7 @@ class MovieEdit(View):
     def post(self,request,movie_id):
 
         movie = Movie.objects.get(pk=movie_id)
-        form = MovieForm(request.POST,instance=movie)
+        form = MovieForm(request.POST,request.FILES,instance=movie)
 
         if form.is_valid():
             image = request.FILES['image']
@@ -50,7 +50,7 @@ class MovieAdd(View):
         return render(request=request, template_name='movie/movie_add.html', context={'form': form})
 
     def post(self, request):
-        form = MovieForm(request.POST)
+        form = MovieForm(request.POST, request.FILES)
         if form.is_valid():
             image = request.FILES['image']
             form.save()

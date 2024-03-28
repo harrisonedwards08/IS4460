@@ -4,14 +4,11 @@
 
     Movies:<br>
     <u>
-        {% for movie in movies%}
+        {% for movie in movies %}
         <li>{{ movie.title }}</li>
-        <li>{{ movie.image }}</li>
-
-
+        <img src="{{ movie.image }}" alt="{{ movie.title }}" style="max-width: 200px; max-height: 200px;">
         {% endfor %}
     </u>
 
 </body>
-
 </html>
