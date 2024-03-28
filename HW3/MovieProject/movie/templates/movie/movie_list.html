@@ -2,12 +2,25 @@
 <html>
 <body>
 
-    Movies:<br>
+<a href="/movie/add/">Add Movie</a>
+
+   <h2>Movies:</h2> 
+    
+    <br>
     <u>
         {% for movie in movies %}
-        <li>{{ movie.title }}</li>
-        <img src="{{ movie.image }}" alt="{{ movie.title }}" style="max-width: 200px; max-height: 200px;">
-        {% endfor %}
+        
+            <a href="/movie/details/{{ movie.id }}/">
+                <br>
+                {{ movie.title }}
+                <br>
+                <img src="{{ movie.image.url }}" alt="{{ movie.title }}" style="max-width: 200px; max-height: 200px;">
+            </a>
+            <br><br>
+        
+    {% endfor %}
+    
+
     </u>
 
 </body>

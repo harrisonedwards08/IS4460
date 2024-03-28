@@ -37,12 +37,31 @@ class MovieEdit(View):
             instance = movie.image = image
             
             movie = form.save()
+            return redirect('movie-list')
         
         return render(request = request,
                       template_name = 'movie/movie_edit.html',
                       context = {'movie':movie,'form':form})
+        
+    
+class MovieDelete(View):
+    def get(self,request, movie_id):
+        movie = Movie.objects.get(pk=movie_id)
+        form = MovieForm(instance=movie)
+    
+        return render(request = request,
+                      template_name = 'movie/movie_delete.html',
+                      context = {'movie':movie,'form':form})
     
 
+    def post(self,request,movie_id):
+        movie = Movie.objects.get(pk = movie_id)
+        movie.delete()
+        return redirect('movie-list')
+    
+
+
+    
 class MovieAdd(View):
 
     def get(self, request):

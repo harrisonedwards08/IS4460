@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    Movies:<br>
+    <u>
+        {% for movie in movies%}
+        <li>{{ movie.title }}</li>
+        <li>{{ movie.image }}</li>
+
+
+        {% endfor %}
+    </u>
+
+</body>
+
+</html>

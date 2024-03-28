@@ -2,7 +2,8 @@
 <html>
 <body>
 
-    Movie Details:<br>
+    <h2>Movie Details:</h2>
+    <br>
     <u>
         <li><strong>Title:</strong> {{ movie.title }}</li>
         <li><strong>Description:</strong> {{ movie.description }}</li>
@@ -11,10 +12,15 @@
         <li><strong>Budget:</strong> {{ movie.budget }}</li>
         <li><strong>Runtime:</strong> {{ movie.runtime }}</li>
         <li><strong>Rating:</strong> {{ movie.rating }}</li>
-        <li><strong>Image:</strong> {{ movie.image }}</li>
+       
+        <br>
+        <img src="{{movie.image.url}}"height = 500>
 
 
     </u>
+    <br>
+    <br>
+    <a href="/movie/edit/{{ movie.id }}/">Update Movie</a>
 
 </body>
 </html>
